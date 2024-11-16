@@ -6,21 +6,19 @@ plugins {
 android {
     namespace 'com.galindo.erick.laboratoriocalificado03'
     compileSdk 34
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.0" // Cambia según la versión compatible
-    }
+
     buildFeatures {
         dataBinding true
-        compose = true
-        viewBinding = true
+        compose true   // Habilitar Jetpack Compose
+        viewBinding true
     }
+
     defaultConfig {
         applicationId "com.galindo.erick.laboratoriocalificado03"
         minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -30,22 +28,31 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = '1.5.0'  // Asegúrate de usar la versión correcta del compilador de Compose
     }
 }
 
 dependencies {
 
+    // Dependencias principales
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat
     implementation libs.material
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
+
+    // Test y pruebas
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit
     androidTestImplementation libs.androidx.espresso.core
@@ -60,10 +67,22 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.12.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
 
+    // Material Design
     implementation 'com.google.android.material:material:1.9.0'
 
+    // Lifecycle
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+
+    // RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    // OkHttp
     implementation 'com.squareup.okhttp3:okhttp:4.11.0'
+
+    // Dependencias adicionales de Compose
+    implementation "androidx.compose.ui:ui:1.5.0"  // Ajusta a la versión correcta de Compose
+    implementation "androidx.compose.material:material:1.5.0"  // Ajusta a la versión correcta de Compose
+    implementation "androidx.compose.ui:ui-tooling-preview:1.5.0"  // Ajusta a la versión correcta de Compose
 }
+

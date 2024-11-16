@@ -17,7 +17,7 @@ class TeacherAdapter(
 
     inner class TeacherViewHolder(private val binding: ItemTeacherBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(teacher: Teacher) {
-            binding.tvName.text = "${teacher.name} ${teacher.lastName}"
+            binding.tvName.text = "${teacher.name} ${teacher.last_name}"
             binding.tvPhone.text = teacher.phone
             binding.tvEmail.text = teacher.email
 
